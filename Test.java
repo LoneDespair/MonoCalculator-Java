@@ -63,104 +63,104 @@ public class Test extends javax.swing.JFrame {
 
         percent.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         percent.setText("%");
-        percent.setMinimumSize(new java.awt.Dimension(100, 40));
+        percent.setMinimumSize(new java.awt.Dimension(65, 30));
 
         clearEntry.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clearEntry.setText("CE");
-        clearEntry.setMinimumSize(new java.awt.Dimension(100, 40));
+        clearEntry.setMinimumSize(new java.awt.Dimension(65, 30));
 
         clear.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clear.setText("C");
-        clear.setMinimumSize(new java.awt.Dimension(100, 40));
+        clear.setMinimumSize(new java.awt.Dimension(65, 30));
 
         backspace.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         backspace.setText("<-");
-        backspace.setMinimumSize(new java.awt.Dimension(100, 40));
+        backspace.setMinimumSize(new java.awt.Dimension(65, 30));
 
         over.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         over.setText("1/x");
-        over.setMinimumSize(new java.awt.Dimension(100, 40));
+        over.setMinimumSize(new java.awt.Dimension(65, 30));
 
         square.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         square.setText("x²");
-        square.setMinimumSize(new java.awt.Dimension(100, 40));
+        square.setMinimumSize(new java.awt.Dimension(65, 30));
 
         squareroot.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         squareroot.setText("√");
-        squareroot.setMinimumSize(new java.awt.Dimension(100, 40));
+        squareroot.setMinimumSize(new java.awt.Dimension(65, 30));
 
         divide.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         divide.setText("÷");
-        divide.setMinimumSize(new java.awt.Dimension(100, 40));
+        divide.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_7.setText("7");
-        num_7.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_7.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_8.setText("8");
-        num_8.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_8.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_9.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_9.setText("9");
-        num_9.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_9.setMinimumSize(new java.awt.Dimension(65, 30));
 
         times.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         times.setText("x");
-        times.setMinimumSize(new java.awt.Dimension(100, 40));
+        times.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_4.setText("4");
-        num_4.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_4.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_5.setText("5");
-        num_5.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_5.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_6.setText("6");
-        num_6.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_6.setMinimumSize(new java.awt.Dimension(65, 30));
 
         minus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         minus.setText("-");
-        minus.setMinimumSize(new java.awt.Dimension(100, 40));
+        minus.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_1.setText("1");
-        num_1.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_1.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_2.setText("2");
-        num_2.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_2.setMinimumSize(new java.awt.Dimension(65, 30));
         num_2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 num_2ActionPerformed(evt);
             }
         });
 
-        num_3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_3.setText("3");
-        num_3.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_3.setMinimumSize(new java.awt.Dimension(65, 30));
 
         plus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         plus.setText("+");
-        plus.setMinimumSize(new java.awt.Dimension(100, 40));
+        plus.setMinimumSize(new java.awt.Dimension(65, 30));
 
         negate.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         negate.setText("+/-");
-        negate.setMinimumSize(new java.awt.Dimension(100, 40));
+        negate.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        num_0.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        num_0.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_0.setText("0");
-        num_0.setMinimumSize(new java.awt.Dimension(100, 40));
+        num_0.setMinimumSize(new java.awt.Dimension(65, 30));
 
         dot.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dot.setText(".");
-        dot.setMinimumSize(new java.awt.Dimension(100, 40));
+        dot.setMinimumSize(new java.awt.Dimension(65, 30));
 
         equals.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         equals.setText("=");
-        equals.setMinimumSize(new java.awt.Dimension(100, 40));
+        equals.setMinimumSize(new java.awt.Dimension(65, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,55 +170,55 @@ public class Test extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(over, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(over, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(square, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(square, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(squareroot, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(squareroot, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(divide, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addComponent(divide, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(num_1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_1, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_2, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_2, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_3, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_3, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plus, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addComponent(plus, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(num_7, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_7, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_8, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_8, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_9, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_9, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(times, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addComponent(times, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(negate, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(negate, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_0, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_0, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dot, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(dot, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(equals, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addComponent(equals, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(percent, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(percent, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clearEntry, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(clearEntry, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(backspace, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                        .addComponent(backspace, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
                     .addComponent(contextLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(primaryLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(num_4, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_4, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_5, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(num_6, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(num_6, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(minus, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
+                        .addComponent(minus, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -227,43 +227,43 @@ public class Test extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(contextLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(primaryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(primaryLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(percent, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(clearEntry, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(backspace, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(percent, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(clearEntry, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(clear, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(backspace, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(over, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(square, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(squareroot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(divide, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(over, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(square, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(squareroot, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(divide, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(num_7, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(num_8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(num_9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(times, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(num_7, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(num_8, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(num_9, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(times, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(num_4, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(num_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(num_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(minus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(num_4, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(num_5, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(num_6, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(minus, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(num_1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(num_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(num_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(plus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(num_1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(num_2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(num_3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(plus, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(negate, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(num_0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dot, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(equals, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(negate, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(num_0, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(dot, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(equals, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
