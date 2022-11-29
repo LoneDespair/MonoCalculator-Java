@@ -378,14 +378,25 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_additionActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
-        double value = 0;
-        
-        if (currentOperation == ADDITION) {
-            value = contextValue + primaryValue;
-            
+        switch (currentOperation) {
+            case ADDITION:
+                contextValue += primaryValue;
+                break;
+            case SUBTRACTION:
+                contextValue -= primaryValue;
+                break;
+            case MULTIPLICATION:
+                contextValue *= primaryValue; 
+                break;
+            case DIVISION:
+                contextValue /= primaryValue;
+                break;
+            default:
+                break;
         }
+        primaryValue = 0;
         
-        String valueText = valueFormat.format(value);
+        String valueText = valueFormat.format(contextValue);
         primaryLabel.setText(valueText);
     }//GEN-LAST:event_equalsActionPerformed
 
