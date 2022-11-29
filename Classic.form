@@ -33,7 +33,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="squareroot" pref="93" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="divide" pref="96" max="32767" attributes="0"/>
+                      <Component id="division" pref="96" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="num_1" pref="94" max="32767" attributes="0"/>
@@ -42,7 +42,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="num_3" pref="93" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="plus" pref="96" max="32767" attributes="0"/>
+                      <Component id="addition" pref="96" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="num_7" pref="94" max="32767" attributes="0"/>
@@ -51,7 +51,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="num_9" pref="93" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="times" pref="96" max="32767" attributes="0"/>
+                      <Component id="multiplication" pref="96" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="negate" pref="94" max="32767" attributes="0"/>
@@ -80,7 +80,7 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="num_6" pref="93" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="minus" pref="96" max="32767" attributes="0"/>
+                      <Component id="subtraction" pref="96" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -106,28 +106,28 @@
                   <Component id="over" alignment="2" pref="56" max="32767" attributes="0"/>
                   <Component id="square" alignment="2" pref="56" max="32767" attributes="0"/>
                   <Component id="squareroot" alignment="2" pref="56" max="32767" attributes="0"/>
-                  <Component id="divide" alignment="2" pref="56" max="32767" attributes="0"/>
+                  <Component id="division" alignment="2" pref="56" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="num_7" alignment="2" pref="59" max="32767" attributes="0"/>
                   <Component id="num_8" alignment="2" pref="59" max="32767" attributes="0"/>
                   <Component id="num_9" alignment="2" pref="59" max="32767" attributes="0"/>
-                  <Component id="times" alignment="2" pref="59" max="32767" attributes="0"/>
+                  <Component id="multiplication" alignment="2" pref="59" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="num_4" alignment="2" pref="57" max="32767" attributes="0"/>
                   <Component id="num_5" alignment="2" pref="57" max="32767" attributes="0"/>
                   <Component id="num_6" alignment="2" pref="57" max="32767" attributes="0"/>
-                  <Component id="minus" alignment="2" pref="57" max="32767" attributes="0"/>
+                  <Component id="subtraction" alignment="2" pref="57" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
                   <Component id="num_1" alignment="2" pref="56" max="32767" attributes="0"/>
                   <Component id="num_2" alignment="2" pref="56" max="32767" attributes="0"/>
                   <Component id="num_3" alignment="2" pref="56" max="32767" attributes="0"/>
-                  <Component id="plus" alignment="2" pref="56" max="32767" attributes="0"/>
+                  <Component id="addition" alignment="2" pref="56" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="2" attributes="0">
@@ -233,7 +233,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="divide">
+    <Component class="javax.swing.JButton" name="division">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -243,6 +243,9 @@
           <Dimension value="[65, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="divisionActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="num_7">
       <Properties>
@@ -286,7 +289,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num_9ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="times">
+    <Component class="javax.swing.JButton" name="multiplication">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -296,6 +299,9 @@
           <Dimension value="[65, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="multiplicationActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="num_4">
       <Properties>
@@ -339,7 +345,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num_6ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="minus">
+    <Component class="javax.swing.JButton" name="subtraction">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -350,7 +356,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="minusActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subtractionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="num_1">
@@ -395,7 +401,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="num_3ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="plus">
+    <Component class="javax.swing.JButton" name="addition">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="0"/>
@@ -406,7 +412,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plusActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="additionActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="negate">

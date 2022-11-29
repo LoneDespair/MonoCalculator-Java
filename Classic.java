@@ -6,14 +6,13 @@ package com.mycompany.monocalculator;
 
 import java.text.DecimalFormat;
 
-/**
- *
- * @author LoneDespair
- */
+
 public class Classic extends javax.swing.JFrame {
+    static final char ADDITION = '+', SUBTRACTION = '-', MULTIPLICATION = 'x', DIVISION = '÷';
+    
     private double contextValue;
     private double primaryValue;
-    private char operation;
+    private char currentOperation = 0;
     
     DecimalFormat valueFormat = new DecimalFormat("0.#");
     
@@ -21,26 +20,22 @@ public class Classic extends javax.swing.JFrame {
     private void appendNum(float num) {
         primaryValue *= 10;
         primaryValue += num;
-        String format = valueFormat.format(primaryValue);
-        primaryLabel.setText(format);
+        String text = valueFormat.format(primaryValue);
+        primaryLabel.setText(text);
     }
     
+    
+    
     private void setOperation(char newOperation) {
-        String format;
-        
-        if (operation == ' ') {
+        if (currentOperation == 0) {
             contextValue = primaryValue;
             primaryValue = 0;
-            
-            format = String.format("%f %c", contextValue, newOperation);
-            
-
-        } else {
-            format = String.format("%f %c", contextValue, newOperation);
         }
         
-        operation = newOperation;
-        contextLabel.setText(format);
+        String valueText = valueFormat.format(contextValue);
+        String text = String.format("%s %c",  valueText, newOperation);
+        currentOperation = newOperation;
+        contextLabel.setText(text);
     }
 
     /**
@@ -68,19 +63,19 @@ public class Classic extends javax.swing.JFrame {
         over = new javax.swing.JButton();
         square = new javax.swing.JButton();
         squareroot = new javax.swing.JButton();
-        divide = new javax.swing.JButton();
+        division = new javax.swing.JButton();
         num_7 = new javax.swing.JButton();
         num_8 = new javax.swing.JButton();
         num_9 = new javax.swing.JButton();
-        times = new javax.swing.JButton();
+        multiplication = new javax.swing.JButton();
         num_4 = new javax.swing.JButton();
         num_5 = new javax.swing.JButton();
         num_6 = new javax.swing.JButton();
-        minus = new javax.swing.JButton();
+        subtraction = new javax.swing.JButton();
         num_1 = new javax.swing.JButton();
         num_2 = new javax.swing.JButton();
         num_3 = new javax.swing.JButton();
-        plus = new javax.swing.JButton();
+        addition = new javax.swing.JButton();
         negate = new javax.swing.JButton();
         num_0 = new javax.swing.JButton();
         dot = new javax.swing.JButton();
@@ -122,9 +117,14 @@ public class Classic extends javax.swing.JFrame {
         squareroot.setText("√");
         squareroot.setMinimumSize(new java.awt.Dimension(65, 30));
 
-        divide.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        divide.setText("÷");
-        divide.setMinimumSize(new java.awt.Dimension(65, 30));
+        division.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        division.setText("÷");
+        division.setMinimumSize(new java.awt.Dimension(65, 30));
+        division.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                divisionActionPerformed(evt);
+            }
+        });
 
         num_7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_7.setText("7");
@@ -153,9 +153,14 @@ public class Classic extends javax.swing.JFrame {
             }
         });
 
-        times.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        times.setText("x");
-        times.setMinimumSize(new java.awt.Dimension(65, 30));
+        multiplication.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        multiplication.setText("x");
+        multiplication.setMinimumSize(new java.awt.Dimension(65, 30));
+        multiplication.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                multiplicationActionPerformed(evt);
+            }
+        });
 
         num_4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_4.setText("4");
@@ -184,12 +189,12 @@ public class Classic extends javax.swing.JFrame {
             }
         });
 
-        minus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        minus.setText("-");
-        minus.setMinimumSize(new java.awt.Dimension(65, 30));
-        minus.addActionListener(new java.awt.event.ActionListener() {
+        subtraction.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        subtraction.setText("-");
+        subtraction.setMinimumSize(new java.awt.Dimension(65, 30));
+        subtraction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                minusActionPerformed(evt);
+                subtractionActionPerformed(evt);
             }
         });
 
@@ -220,12 +225,12 @@ public class Classic extends javax.swing.JFrame {
             }
         });
 
-        plus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        plus.setText("+");
-        plus.setMinimumSize(new java.awt.Dimension(65, 30));
-        plus.addActionListener(new java.awt.event.ActionListener() {
+        addition.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addition.setText("+");
+        addition.setMinimumSize(new java.awt.Dimension(65, 30));
+        addition.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                plusActionPerformed(evt);
+                additionActionPerformed(evt);
             }
         });
 
@@ -269,7 +274,7 @@ public class Classic extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(squareroot, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(divide, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                        .addComponent(division, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(num_1, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -277,7 +282,7 @@ public class Classic extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(num_3, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(plus, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                        .addComponent(addition, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(num_7, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -285,7 +290,7 @@ public class Classic extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(num_9, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(times, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                        .addComponent(multiplication, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(negate, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -311,7 +316,7 @@ public class Classic extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(num_6, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(minus, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
+                        .addComponent(subtraction, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -332,25 +337,25 @@ public class Classic extends javax.swing.JFrame {
                     .addComponent(over, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                     .addComponent(square, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                     .addComponent(squareroot, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                    .addComponent(divide, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
+                    .addComponent(division, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(num_7, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                     .addComponent(num_8, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                     .addComponent(num_9, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                    .addComponent(times, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE))
+                    .addComponent(multiplication, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(num_4, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                     .addComponent(num_5, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
                     .addComponent(num_6, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
-                    .addComponent(minus, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
+                    .addComponent(subtraction, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(num_1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                     .addComponent(num_2, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                     .addComponent(num_3, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                    .addComponent(plus, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
+                    .addComponent(addition, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(negate, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
@@ -368,14 +373,20 @@ public class Classic extends javax.swing.JFrame {
         appendNum(2);
     }//GEN-LAST:event_num_2ActionPerformed
 
-    private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
-        setOperation('+');
-    }//GEN-LAST:event_plusActionPerformed
+    private void additionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additionActionPerformed
+        setOperation(ADDITION);
+    }//GEN-LAST:event_additionActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
-        if (operation == '+') {
+        double value;
+        
+        if (currentOperation == ADDITION) {
+            value = contextValue + primaryValue;
             
         }
+        
+        
+        
     }//GEN-LAST:event_equalsActionPerformed
 
     private void num_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_0ActionPerformed
@@ -414,9 +425,17 @@ public class Classic extends javax.swing.JFrame {
         appendNum(9);
     }//GEN-LAST:event_num_9ActionPerformed
 
-    private void minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusActionPerformed
-        setOperation('-');
-    }//GEN-LAST:event_minusActionPerformed
+    private void subtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractionActionPerformed
+        setOperation(SUBTRACTION);
+    }//GEN-LAST:event_subtractionActionPerformed
+
+    private void multiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicationActionPerformed
+        setOperation(MULTIPLICATION);
+    }//GEN-LAST:event_multiplicationActionPerformed
+
+    private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
+        setOperation(DIVISION);
+    }//GEN-LAST:event_divisionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -455,14 +474,15 @@ public class Classic extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addition;
     private javax.swing.JButton backspace;
     private javax.swing.JButton clear;
     private javax.swing.JButton clearEntry;
     private javax.swing.JLabel contextLabel;
-    private javax.swing.JButton divide;
+    private javax.swing.JButton division;
     private javax.swing.JButton dot;
     private javax.swing.JButton equals;
-    private javax.swing.JButton minus;
+    private javax.swing.JButton multiplication;
     private javax.swing.JButton negate;
     private javax.swing.JButton num_0;
     private javax.swing.JButton num_1;
@@ -476,10 +496,9 @@ public class Classic extends javax.swing.JFrame {
     private javax.swing.JButton num_9;
     private javax.swing.JButton over;
     private javax.swing.JButton percent;
-    private javax.swing.JButton plus;
     private javax.swing.JLabel primaryLabel;
     private javax.swing.JButton square;
     private javax.swing.JButton squareroot;
-    private javax.swing.JButton times;
+    private javax.swing.JButton subtraction;
     // End of variables declaration//GEN-END:variables
 }
