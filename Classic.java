@@ -378,15 +378,15 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_additionActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
-        double value;
+        double value = 0;
         
         if (currentOperation == ADDITION) {
             value = contextValue + primaryValue;
             
         }
         
-        
-        
+        String valueText = valueFormat.format(value);
+        primaryLabel.setText(valueText);
     }//GEN-LAST:event_equalsActionPerformed
 
     private void num_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_0ActionPerformed
