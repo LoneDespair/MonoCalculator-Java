@@ -12,30 +12,71 @@ public class Classic extends javax.swing.JFrame {
     
     private double contextValue;
     private double primaryValue;
-    private char currentOperation = 0;
+    private char operation = 0;
+    
+    private boolean hasSetPrimary = false;
     
     DecimalFormat valueFormat = new DecimalFormat("0.#");
     
     
     private void appendNum(float num) {
-        primaryValue *= 10;
-        primaryValue += num;
-        String text = valueFormat.format(primaryValue);
-        primaryLabel.setText(text);
-    }
-    
-    
-    
-    private void setOperation(char newOperation) {
-        if (currentOperation == 0) {
-            contextValue = primaryValue;
-            primaryValue = 0;
+        if (hasSetPrimary) {
+            num += primaryValue * 10;
         }
         
+        setPrimaryValue(num);
+    }
+    
+    private void setPrimaryValue(double newPrimaryValue) {
+        primaryValue = newPrimaryValue;
+        String text = valueFormat.format(primaryValue);
+        primaryLabel.setText(text);
+        hasSetPrimary = true;
+    }
+    
+    private void setOperation(char newOperation) {
+        if (operation == 0) {
+            contextValue = primaryValue;
+            String valueText = valueFormat.format(contextValue);
+            String text = String.format("%s %c",  valueText, newOperation);
+
+            contextLabel.setText(text);
+            
+        } else if (hasSetPrimary) {
+            equals();
+        }
+        
+        operation = newOperation;
+        hasSetPrimary = false;
+    }
+    
+    private void equals() {
+        String currentPrimaryText = primaryLabel.getText();
+        
+        switch (operation) {
+            case ADDITION:
+                contextValue += primaryValue;
+                break;
+            case SUBTRACTION:
+                contextValue -= primaryValue;
+                break;
+            case MULTIPLICATION:
+                contextValue *= primaryValue; 
+                break;
+            case DIVISION:
+                contextValue /= primaryValue;
+                break;
+            default:
+                
+                return;
+        }
+        
+        String newContextText = String.format("%s %s =", contextLabel.getText(), currentPrimaryText);
+        contextLabel.setText(newContextText);
+        
+        
         String valueText = valueFormat.format(contextValue);
-        String text = String.format("%s %c",  valueText, newOperation);
-        currentOperation = newOperation;
-        contextLabel.setText(text);
+        primaryLabel.setText(valueText);
     }
 
     /**
@@ -96,10 +137,20 @@ public class Classic extends javax.swing.JFrame {
         clearEntry.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clearEntry.setText("CE");
         clearEntry.setMinimumSize(new java.awt.Dimension(65, 30));
+        clearEntry.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearEntryActionPerformed(evt);
+            }
+        });
 
         clear.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         clear.setText("C");
         clear.setMinimumSize(new java.awt.Dimension(65, 30));
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
 
         backspace.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         backspace.setText("<-");
@@ -378,26 +429,7 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_additionActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
-        switch (currentOperation) {
-            case ADDITION:
-                contextValue += primaryValue;
-                break;
-            case SUBTRACTION:
-                contextValue -= primaryValue;
-                break;
-            case MULTIPLICATION:
-                contextValue *= primaryValue; 
-                break;
-            case DIVISION:
-                contextValue /= primaryValue;
-                break;
-            default:
-                break;
-        }
-        primaryValue = 0;
-        
-        String valueText = valueFormat.format(contextValue);
-        primaryLabel.setText(valueText);
+        equals();
     }//GEN-LAST:event_equalsActionPerformed
 
     private void num_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_0ActionPerformed
@@ -447,6 +479,17 @@ public class Classic extends javax.swing.JFrame {
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
         setOperation(DIVISION);
     }//GEN-LAST:event_divisionActionPerformed
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+        operation = 0;
+        contextValue = 0;
+        contextLabel.setText("");
+        setPrimaryValue(0);
+    }//GEN-LAST:event_clearActionPerformed
+
+    private void clearEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearEntryActionPerformed
+        setPrimaryValue(0);
+    }//GEN-LAST:event_clearEntryActionPerformed
 
     /**
      * @param args the command line arguments

@@ -177,6 +177,9 @@
           <Dimension value="[65, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearEntryActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="clear">
       <Properties>
@@ -188,6 +191,9 @@
           <Dimension value="[65, 30]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="backspace">
       <Properties>
