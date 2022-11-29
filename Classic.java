@@ -11,18 +11,36 @@ import java.text.DecimalFormat;
  * @author LoneDespair
  */
 public class Classic extends javax.swing.JFrame {
-    private double previousValue;
-    private double currentValue;
+    private double contextValue;
+    private double primaryValue;
     private char operation;
     
     DecimalFormat valueFormat = new DecimalFormat("0.#");
     
     
     private void appendNum(float num) {
-        currentValue *= 10;
-        currentValue += num;
-        String format = valueFormat.format(currentValue);
+        primaryValue *= 10;
+        primaryValue += num;
+        String format = valueFormat.format(primaryValue);
         primaryLabel.setText(format);
+    }
+    
+    private void setOperation(char newOperation) {
+        String format;
+        
+        if (operation == ' ') {
+            contextValue = primaryValue;
+            primaryValue = 0;
+            
+            format = String.format("%f %c", contextValue, newOperation);
+            
+
+        } else {
+            format = String.format("%f %c", contextValue, newOperation);
+        }
+        
+        operation = newOperation;
+        contextLabel.setText(format);
     }
 
     /**
@@ -169,6 +187,11 @@ public class Classic extends javax.swing.JFrame {
         minus.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         minus.setText("-");
         minus.setMinimumSize(new java.awt.Dimension(65, 30));
+        minus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minusActionPerformed(evt);
+            }
+        });
 
         num_1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         num_1.setText("1");
@@ -346,7 +369,7 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_num_2ActionPerformed
 
     private void plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusActionPerformed
-        operation = '+';
+        setOperation('+');
     }//GEN-LAST:event_plusActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
@@ -390,6 +413,10 @@ public class Classic extends javax.swing.JFrame {
     private void num_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_9ActionPerformed
         appendNum(9);
     }//GEN-LAST:event_num_9ActionPerformed
+
+    private void minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusActionPerformed
+        setOperation('-');
+    }//GEN-LAST:event_minusActionPerformed
 
     /**
      * @param args the command line arguments
