@@ -10,73 +10,86 @@ import java.text.DecimalFormat;
 public class Classic extends javax.swing.JFrame {
     static final char ADDITION = '+', SUBTRACTION = '-', MULTIPLICATION = 'x', DIVISION = '÷';
     
-    private double contextValue;
-    private double primaryValue;
+    private double previousNum;
+    private double currentNum;
+    
     private char operation = 0;
     
+    private String primaryPrefix = "";
+
+    private boolean justEquals = false;
+    
+    private double lastResult;
     private boolean hasSetPrimary = false;
     
     DecimalFormat valueFormat = new DecimalFormat("0.#");
     
     
     private void appendNum(float num) {
-        if (hasSetPrimary) {
-            num += primaryValue * 10;
+        if (justEquals) {
+            currentNum = 0;
         }
         
-        setPrimaryValue(num);
+        setCurrentNum(num + currentNum * 10);
+        justEquals = false;
     }
     
-    private void setPrimaryValue(double newPrimaryValue) {
-        primaryValue = newPrimaryValue;
-        String text = valueFormat.format(primaryValue);
-        primaryLabel.setText(text);
-        hasSetPrimary = true;
+    
+    private void setCurrentNum(double newPrimaryValue) {
+        currentNum = newPrimaryValue;
+        String text = valueFormat.format(currentNum);
+        primaryLabel.setText(primaryPrefix + text);
     }
     
     private void setOperation(char newOperation) {
-        if (operation == 0) {
-            contextValue = primaryValue;
-            String valueText = valueFormat.format(contextValue);
-            String text = String.format("%s %c",  valueText, newOperation);
-
-            contextLabel.setText(text);
-            
-        } else if (hasSetPrimary) {
+        if (operation != 0) {
             equals();
         }
         
+        if (justEquals == false) {
+            previousNum = currentNum;
+        }
+        
         operation = newOperation;
-        hasSetPrimary = false;
+        currentNum = 0;
+        
+        primaryPrefix = String.format("%s %c ", primaryLabel.getText(), operation);
+        primaryLabel.setText(primaryPrefix);
+        justEquals = false;
     }
     
     private void equals() {
-        String currentPrimaryText = primaryLabel.getText();
+        contextLabel.setText(primaryLabel.getText() + " =");
         
         switch (operation) {
             case ADDITION:
-                contextValue += primaryValue;
+                previousNum += currentNum;
                 break;
             case SUBTRACTION:
-                contextValue -= primaryValue;
+                previousNum -= currentNum;
                 break;
             case MULTIPLICATION:
-                contextValue *= primaryValue; 
+                previousNum *= currentNum; 
                 break;
             case DIVISION:
-                contextValue /= primaryValue;
+                previousNum /= currentNum;
                 break;
             default:
                 
                 return;
         }
         
-        String newContextText = String.format("%s %s =", contextLabel.getText(), currentPrimaryText);
-        contextLabel.setText(newContextText);
+        String valueText = valueFormat.format(previousNum);
         
-        
-        String valueText = valueFormat.format(contextValue);
+        clearPrimary();
+        justEquals = true;
         primaryLabel.setText(valueText);
+    }
+    
+    private void clearPrimary() {
+        primaryPrefix = "";
+        operation = 0;
+        setCurrentNum(0);
     }
 
     /**
@@ -481,14 +494,12 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_divisionActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
-        operation = 0;
-        contextValue = 0;
         contextLabel.setText("");
-        setPrimaryValue(0);
+        clearPrimary();
     }//GEN-LAST:event_clearActionPerformed
 
     private void clearEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearEntryActionPerformed
-        setPrimaryValue(0);
+        setCurrentNum(0);
     }//GEN-LAST:event_clearEntryActionPerformed
 
     /**
