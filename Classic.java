@@ -37,13 +37,6 @@ public class Classic extends javax.swing.JFrame {
         justEquals = false;
     }
     
-    /*
-    private void setCurrentNum(double newPrimaryValue) {
-        currentNum = newPrimaryValue;
-        String text = valueFormat.format(currentNum);
-        primaryLabel.setText(primaryPrefix + text);
-    }*/
-    
     private void setOperation(char newOperation) {
         if (operation != 0) {
             equals();
@@ -94,8 +87,8 @@ public class Classic extends javax.swing.JFrame {
     
     private void clearPrimary() {
         primaryPrefix = "";
+        currentStr = "";
         operation = 0;
-        //setCurrentNum(0);
     }
 
     /**
@@ -320,6 +313,11 @@ public class Classic extends javax.swing.JFrame {
         dot.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dot.setText(".");
         dot.setMinimumSize(new java.awt.Dimension(65, 30));
+        dot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dotActionPerformed(evt);
+            }
+        });
 
         equals.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         equals.setText("=");
@@ -501,12 +499,17 @@ public class Classic extends javax.swing.JFrame {
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         contextLabel.setText("");
+        primaryLabel.setText("0");
         clearPrimary();
     }//GEN-LAST:event_clearActionPerformed
 
     private void clearEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearEntryActionPerformed
         //setCurrentNum('0');
     }//GEN-LAST:event_clearEntryActionPerformed
+
+    private void dotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotActionPerformed
+        appendNum('.');
+    }//GEN-LAST:event_dotActionPerformed
 
     /**
      * @param args the command line arguments
