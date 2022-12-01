@@ -4,14 +4,15 @@
  */
 package com.mycompany.monocalculator;
 
+import java.math.*;
 import java.text.DecimalFormat;
 
 
 public class Classic extends javax.swing.JFrame {
     static final char ADDITION = '+', SUBTRACTION = '-', MULTIPLICATION = 'x', DIVISION = '÷';
     
-    private double previousNum;
-    private double currentNum;
+    private String previousStr = "";
+    private String currentStr = "";
     
     private char operation = 0;
     
@@ -25,21 +26,23 @@ public class Classic extends javax.swing.JFrame {
     DecimalFormat valueFormat = new DecimalFormat("0.#");
     
     
-    private void appendNum(float num) {
+    private void appendNum(char num) {
         if (justEquals) {
-            currentNum = 0;
+            currentStr = "";
         }
+        currentStr += num;
+        primaryLabel.setText(primaryPrefix + currentStr);
         
-        setCurrentNum(num + currentNum * 10);
+        //setCurrentNum(num + currentNum * 10);
         justEquals = false;
     }
     
-    
+    /*
     private void setCurrentNum(double newPrimaryValue) {
         currentNum = newPrimaryValue;
         String text = valueFormat.format(currentNum);
         primaryLabel.setText(primaryPrefix + text);
-    }
+    }*/
     
     private void setOperation(char newOperation) {
         if (operation != 0) {
@@ -47,11 +50,11 @@ public class Classic extends javax.swing.JFrame {
         }
         
         if (justEquals == false) {
-            previousNum = currentNum;
+            previousStr = currentStr;
         }
         
         operation = newOperation;
-        currentNum = 0;
+        currentStr = "";
         
         primaryPrefix = String.format("%s %c ", primaryLabel.getText(), operation);
         primaryLabel.setText(primaryPrefix);
@@ -61,6 +64,10 @@ public class Classic extends javax.swing.JFrame {
     private void equals() {
         contextLabel.setText(primaryLabel.getText() + " =");
         
+        double previousNum = Double.parseDouble(previousStr);
+        double currentNum = Double.parseDouble(currentStr);
+        
+        
         switch (operation) {
             case ADDITION:
                 previousNum += currentNum;
@@ -69,7 +76,7 @@ public class Classic extends javax.swing.JFrame {
                 previousNum -= currentNum;
                 break;
             case MULTIPLICATION:
-                previousNum *= currentNum; 
+                previousNum *= currentNum;
                 break;
             case DIVISION:
                 previousNum /= currentNum;
@@ -78,18 +85,17 @@ public class Classic extends javax.swing.JFrame {
                 
                 return;
         }
-        
-        String valueText = valueFormat.format(previousNum);
+        previousStr = valueFormat.format(previousNum);
         
         clearPrimary();
         justEquals = true;
-        primaryLabel.setText(valueText);
+        primaryLabel.setText(previousStr);
     }
     
     private void clearPrimary() {
         primaryPrefix = "";
         operation = 0;
-        setCurrentNum(0);
+        //setCurrentNum(0);
     }
 
     /**
@@ -434,7 +440,7 @@ public class Classic extends javax.swing.JFrame {
 
     
     private void num_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_2ActionPerformed
-        appendNum(2);
+        appendNum('2');
     }//GEN-LAST:event_num_2ActionPerformed
 
     private void additionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additionActionPerformed
@@ -446,39 +452,39 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_equalsActionPerformed
 
     private void num_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_0ActionPerformed
-        appendNum(0);
+        appendNum('0');
     }//GEN-LAST:event_num_0ActionPerformed
 
     private void num_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_1ActionPerformed
-        appendNum(1);
+        appendNum('1');
     }//GEN-LAST:event_num_1ActionPerformed
 
     private void num_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_3ActionPerformed
-        appendNum(3);
+        appendNum('3');
     }//GEN-LAST:event_num_3ActionPerformed
 
     private void num_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_4ActionPerformed
-        appendNum(4);
+        appendNum('4');
     }//GEN-LAST:event_num_4ActionPerformed
 
     private void num_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_5ActionPerformed
-        appendNum(5);
+        appendNum('5');
     }//GEN-LAST:event_num_5ActionPerformed
 
     private void num_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_6ActionPerformed
-        appendNum(6);
+        appendNum('6');
     }//GEN-LAST:event_num_6ActionPerformed
 
     private void num_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_7ActionPerformed
-        appendNum(7);
+        appendNum('7');
     }//GEN-LAST:event_num_7ActionPerformed
 
     private void num_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_8ActionPerformed
-        appendNum(8);
+        appendNum('8');
     }//GEN-LAST:event_num_8ActionPerformed
 
     private void num_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num_9ActionPerformed
-        appendNum(9);
+        appendNum('9');
     }//GEN-LAST:event_num_9ActionPerformed
 
     private void subtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractionActionPerformed
@@ -499,7 +505,7 @@ public class Classic extends javax.swing.JFrame {
     }//GEN-LAST:event_clearActionPerformed
 
     private void clearEntryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearEntryActionPerformed
-        setCurrentNum(0);
+        //setCurrentNum('0');
     }//GEN-LAST:event_clearEntryActionPerformed
 
     /**
